@@ -1,0 +1,1 @@
+Este aplicativo é um projeto pessoal onde aplico conhecimentos básicos sobre pandas,flask e numpy, inicialmente estou criando as rotas básicas e alguns gráficos úteis, assim como uma reta de regressão. Atualizações em Breve
