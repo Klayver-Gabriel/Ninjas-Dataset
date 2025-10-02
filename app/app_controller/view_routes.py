@@ -12,7 +12,6 @@ def showDataset():
     return render_template("dataset.html",table = pd.read_csv("Banco de Ninjas.csv").to_html())
 @app.route("/dataset",methods = ["POST"])
 def modifyRol():
-    if request.method == "POST":
         # GETTING THE VALUES FROM THE REQUEST
         element = request.form.get("element")
         village = request.form.get("village")
@@ -72,3 +71,11 @@ def clean():
     brute_rol.to_csv("Banco de Ninjas.csv",index=False)
 
     return "Vazios Limpos"
+
+@app.route("/filter",methods = ["GET"])
+def filter_choose():
+    collum = request.form.get("Collum")
+    query = request.form.get("Filter")
+    filter = brute_rol[brute_rol[collum]  == query]
+    print(filter)
+    return render_template("dataset.html",table = filter.to_html())
